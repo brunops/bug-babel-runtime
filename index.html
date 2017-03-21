@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
+  <!--
+    The problem seems to go away with prototype.js version 1.7.3
+    But version 1.7.0 seems to be currently used by Magento websites.
+
+    The same error can be reproduced by:
+    1. go to https://marketplace.magento.com/
+    2. paste bundle.js in the console
+    3. run Object.prototype.toString.call([])
+  -->
+  <script src=".build/bundle.js"></script>
+</head>
+<body>
+  <h1>Hai</h1>
+
+  <script>
+    console.log(Object.prototype.toString.call([])) // => "[object Array Iterator]"
+  </script>
+
+</body>
+</html>
